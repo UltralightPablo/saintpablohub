@@ -1,0 +1,31 @@
+local game = game.PlaceId
+
+local combatWarriors = 4282985734
+local clickerHeroes = 9711302332
+
+function toClipboard(String)
+	local clipBoard = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
+	if clipBoard then
+		clipBoard(String)
+		print('Discord','Copied to clipboard.')
+	else
+		print('Discord',"Your exploit doesn't have the ability to use the clipboard.")
+	end
+end
+
+--Combat Warriors
+if game == combatWarriors then
+    print("Game Compatible with SPH: Combat Warriors, Loading Script...")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/UltralightPablo/combatwarriors/main/source",true))()
+end
+
+--Clicker Heroes
+if game == clickerHeroes then
+    print("Game Compatible with SPH: Clicker Heroes, Loading Script...")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/UltralightPablo/pabloclicker/main/source",true))()
+end
+
+if game ~= combatWarriors and clickerHeroes then
+    print("This game is not currently supported by Saint Pablo Hub, to view our supported games, join our Discord server.")
+    toClipboard("https://discord.gg/zsuHWTJeCD")
+end
